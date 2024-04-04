@@ -1,6 +1,8 @@
 .cardContainer {
     display: flex;
     flex-wrap: wrap;
-    justify-content: flex-start; /* Alinear las cartas al principio */
+    justify-content: center; /* Alinear las cartas al principio */
     align-items: center;
+    margin: 3% 10% 0 3%;
+    
   }

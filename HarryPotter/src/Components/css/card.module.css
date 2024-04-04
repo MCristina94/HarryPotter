@@ -10,8 +10,10 @@
     position: relative;
     margin: 10px;
     color: #e2f8f1;
+    border-left: 0px solid red;
+    
   }
-  
+
   .img{
     width: 40%;
     height: 100%;
@@ -23,3 +25,7 @@
     margin-left: 10%;
   }
   
+  .card:hover{
+    border-left: red solid 10px;
+    transform: scale(0.95);
+  }
