@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import BannerHome from '../Components/BannerHome'
 import Card from '../Components/Card'
+import h from './css/home.module.css'
 
 
 const Home = () => {
@@ -29,6 +30,7 @@ console.log(students);
     <div>
       <BannerHome/>
 
+    <div className={h.cardContainer}>
       {students && students.map((student) => {
         return (
           <div key={student.id}>
@@ -36,6 +38,8 @@ console.log(students);
           </div>
         )
       })}
+    </div>
+      
     </div>
   )
 }
