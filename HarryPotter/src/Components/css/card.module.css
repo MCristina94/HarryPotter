@@ -33,25 +33,32 @@
   }
 
   .gryffindor:hover {
-    border-left: #990000 solid 10px; /* Cambiar a color de Gryffindor */
+    border-left: #990000 solid 10px; 
   }
   
   .slytherin:hover {
-    border-left: #2a623d solid 10px; /* Cambiar a color de Slytherin */
+    border-left: #2a623d solid 10px; 
   }
   
   .ravenclaw:hover {
-    border-left: #222f5b solid 10px; /* Cambiar a color de Ravenclaw */
+    border-left: #222f5b solid 10px; 
   }
   
   .hufflepuff:hover {
-    border-left: #f3cd39 solid 10px; /* Cambiar a color de Hufflepuff */
+    border-left: #f3cd39 solid 10px; 
   }
 
   .info h3 {
-    margin-top: 0; /* Añade esta línea para evitar superposiciones con el corazón */
+    margin-top: 0; 
 }
 
 .info p {
-    margin-bottom: 0; /* Añade esta línea para evitar superposiciones con el corazón */
+    margin-bottom: 0; 
+}
+.fa-up-right-from-square {
+  color: blue; 
+}
+
+.arrow{
+  color: 'red'
 }

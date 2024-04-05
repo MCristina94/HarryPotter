@@ -6,3 +6,25 @@
     margin: 3% 10% 0 3%;
     
   }
+  .tittleStudent{
+    font-family: "Cabin", sans-serif;
+    color: #e2f8f1;
+    display: flex;
+    justify-content: center;
+    margin-top: 3%;
+  }
+
+  .pag{
+    display: flex;
+    justify-content: center;
+    color: #e2f8f1;
+  }
+
+  .numberPag{
+    margin: 10px
+  }
+
+  .numberPag:hover{
+    text-decoration: underline;
+    cursor: pointer
+  }

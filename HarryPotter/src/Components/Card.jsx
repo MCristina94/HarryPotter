@@ -37,8 +37,8 @@ const Card = ({ student }) => {
       <div style={{ position: 'absolute', top: 20, right: 50 }}>
         <i class="fa-solid fa-heart" ></i>
       </div>
-      <div style={{ position: 'absolute', top: 180, right: 50}}>
-      <i class="fa-solid fa-up-right-from-square" ></i> 
+      <div className="icon-container" style={{ position: 'absolute', top: 180, right: 50}}>
+        <i class="fa-solid fa-up-right-from-square"></i>
       </div>
     </div>
   );
