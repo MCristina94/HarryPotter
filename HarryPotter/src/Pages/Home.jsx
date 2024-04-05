@@ -1,39 +1,38 @@
-import React, { useEffect, useState } from 'react'
-import BannerHome from '../Components/BannerHome'
-import Card from '../Components/Card'
-import h from './css/home.module.css'
-
+import React, { useEffect, useState } from "react";
+import BannerHome from "../Components/BannerHome";
+import Card from "../Components/Card";
+import h from "./css/home.module.css";
 
 const Home = () => {
   const [students, setStudents] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
-  const[itemsPerPage] = useState(11);
+  const [itemsPerPage] = useState(11);
+  const [selectedPage, setSelectedPage] = useState(1);
 
-  const url = 'https://hp-api.onrender.com/api/characters/students'
+  const url = "https://hp-api.onrender.com/api/characters/students";
   useEffect(() => {
     fetch(url)
-    .then((response) => {
-        if(response.ok){
-            return response.json();
+      .then((response) => {
+        if (response.ok) {
+          return response.json();
         }
         throw new Error("hubo un error");
-    })
-    .then(data => {
+      })
+      .then((data) => {
         setStudents(data);
-        
-    })
-    .catch(error => {
+      })
+      .catch((error) => {
         console.log(error);
-    })
-}, [])
+      });
+  }, []);
 
- // Lógica para calcular los elementos a mostrar en la página actual
- const indexOfLastItem = currentPage * itemsPerPage;
- const indexOfFirstItem = indexOfLastItem - itemsPerPage;
- const currentItems = students.slice(indexOfFirstItem, indexOfLastItem);
+  // Lógica para calcular los elementos a mostrar en la página actual
+  const indexOfLastItem = currentPage * itemsPerPage;
+  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+  const currentItems = students.slice(indexOfFirstItem, indexOfLastItem);
 
- // Función para cambiar de página
- const paginate = pageNumber => setCurrentPage(pageNumber);
+  // Función para cambiar de página
+  const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
   // Calcular el rango de botones de paginación a mostrar
   const pageNumbers = [];
@@ -51,7 +50,10 @@ const Home = () => {
     if (currentPage <= Math.ceil(maxPageButtons / 2)) {
       startPage = 1;
       endPage = maxPageButtons;
-    } else if (currentPage + Math.floor(maxPageButtons / 2) >= pageNumbers.length) {
+    } else if (
+      currentPage + Math.floor(maxPageButtons / 2) >=
+      pageNumbers.length
+    ) {
       startPage = pageNumbers.length - maxPageButtons + 1;
       endPage = pageNumbers.length;
     } else {
@@ -74,13 +76,20 @@ const Home = () => {
       <div className={h.pag}>
         {pageNumbers.slice(startPage - 1, endPage).map((number, index) => (
           <div key={index}>
-            <p onClick={() => paginate(number)} className={h.numberPag}>{number}</p>
+            <p
+              onClick={() => paginate(number)}
+              className={
+                number === currentPage
+                  ? `${h.numberPag} ${h.subrayado}`
+                  : h.numberPag
+              } // Cambio aquí: comparar con currentPage en lugar de selectedPage
+            >
+              {number}
+            </p>
           </div>
         ))}
       </div>
     </div>
-  )
-}
-
-export default Home
-
+  );
+};
+export default Home;

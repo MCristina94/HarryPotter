@@ -8,6 +8,7 @@ import Detail from './Pages/Detail'
 import Favs from './Pages/Favs'
 import Spells from './Pages/Spells'
 import Game from './Pages/Game'
+import Footer from './Components/Footer'
 
 
 function App() {
@@ -17,7 +18,6 @@ function App() {
     <>
       <div className="bg">
         <Navbar/>
-        
         <Routes>
           <Route path='/' element={<Home/>}/>
           <Route path='/about' element={<About/>}/>
@@ -26,6 +26,7 @@ function App() {
           <Route path='/spells' element={<Spells/>}/>
           <Route path='/game' element={<Game/>}/>
         </Routes>
+        <Footer/>
       </div>
     </>
   )
