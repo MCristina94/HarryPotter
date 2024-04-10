@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import Card from '../Components/Card';
+import f from './css/favs.module.css'
 
 const Favs = () => {
   const [studentSelected, setStudentSelected] = useState([]);
@@ -20,14 +21,25 @@ const Favs = () => {
   };
 
   return (
-    <div>
+    <div className={f.container}>
+      <h1 className={f.tittle}>
+        Your Favorites Students
+      </h1>
+      <div className={f.containerCards}> 
+
       {studentSelected && studentSelected.map((student) =>{
         return (
-          <div>
-          <Card student={student}/>   
-          </div>
+          
+            <div className={f.card}>
+             <Card student={student}/>  
+            </div>
+          
+            
+          
         )
+        
       })}
+      </div>
     </div>
   )
 }
