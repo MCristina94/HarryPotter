@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import c from "./css/card.module.css";
 import logoGryffindor from "../img/Gryffindor.png";
 import logoSlytherin from "../img/Slytherin.png";
@@ -7,7 +7,8 @@ import logoRavenclaw from "../img/Ravenclaw.png";
 import logoHogwarts from "../img/houses.png";
 import { Link } from "react-router-dom";
 
-const Card = ({ student }) => {
+const Card = ({ student, setStudentSelect }) => {
+  const [isFavorite, setIsFavorite] = useState(false);
   let imageStudent;
   if (student.image && student.image !== "") {
     imageStudent = student.image;
@@ -26,25 +27,50 @@ const Card = ({ student }) => {
       imageStudent = logoHogwarts;
     }
   }
-
   console.log(student.house);
+
+  function studentStorage() {
+    setIsFavorite(!isFavorite);
+    setStudentSelect(prevState => {
+      const updatedFavorites = isFavorite
+        ? prevState.filter(student => student.id !== student.id)
+        : [...prevState, student];
+      localStorage.setItem("favorites", JSON.stringify(updatedFavorites));
+      return updatedFavorites;
+    });
+  }
+
   return (
-    <Link to={"/detail/" + student.id} className={c.links}>
-    <div className={`${c.card} ${c[student.house.toLowerCase()]}`}>
-      <img src={imageStudent} alt="photoCharacter" className={c.img} />
-      <div className={c.info}>
-        <h3>{student.name}</h3>
-        <p>Casa: {student.house}</p>
+    
+      <div className={`${c.card} ${c[student.house.toLowerCase()]}`}>
+        <img src={imageStudent} alt="photoCharacter" className={c.img} />
+        <div className={c.info}>
+          <h3>{student.name}</h3>
+          <p>Casa: {student.house}</p>
+        </div>
+        <div
+          className={c.heart}
+          style={{ position: "absolute", top: 20, right: 50 }}
+          onClick={studentStorage}
+        >
+         {isFavorite ? (
+          <i className="fa-solid fa-heart"></i>
+        ) : (
+          <i className="fa-regular fa-heart"></i>
+        )}
+         
+        </div>
+        <Link to={"/detail/" + student.id} className={c.links}>
+        <div
+          className={c.arrowCard}
+          style={{ position: "absolute", top: 180, right: 50 }}
+        >
+          <i class="fa-solid fa-up-right-from-square"></i>
+        </div>
+        </Link>
       </div>
-      <div className={c.heart} style={{ position: 'absolute', top: 20, right: 50}}>
-        <i class="fa-solid fa-heart" ></i>
-      </div>
-      <div className={c.arrowCard}  style={{ position: 'absolute', top: 180, right: 50}}>
-        <i class="fa-solid fa-up-right-from-square"></i>
-      </div>
-    </div></Link>
+    
   );
 };
 
 export default Card;
-

@@ -8,6 +8,7 @@ const Home = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [itemsPerPage] = useState(11);
   const [selectedPage, setSelectedPage] = useState(1);
+  const [studentSelect, setStudentSelect] = useState([]);
 
   const url = "https://hp-api.onrender.com/api/characters/students";
   useEffect(() => {
@@ -68,7 +69,7 @@ const Home = () => {
       <div className={h.cardContainer}>
         {currentItems.map((student, index) => (
           <div key={index}>
-            <Card student={student} />
+            <Card student={student} setStudentSelect={setStudentSelect}/>
           </div>
         ))}
       </div>
