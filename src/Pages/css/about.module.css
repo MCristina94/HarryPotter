@@ -1,0 +1,19 @@
+.container{
+    padding-top: 5%;
+}
+.tittle{
+    display: flex;
+    color: #d8bf7f;
+    justify-content: center;
+    margin: 5%;
+}
+
+.text{
+    color: #e2f8f1;
+    margin: 0 10%;
+    font-size: medium;
+    background-color: #ffffff11;
+    padding: 5%;
+    border-radius: 10px;
+    
+}

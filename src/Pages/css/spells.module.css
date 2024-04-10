@@ -1,0 +1,20 @@
+.container{
+    color:aliceblue;
+    padding-top: 5%;
+}
+
+.tittle{
+    display: flex;
+    color: #d8bf7f;
+    justify-content: center;
+    margin: 5%;
+}
+
+.containerCardSpell{
+    background-color: #ffffff11;
+    margin: 2% 5% 2% 5% ;
+    height: 100px;
+    border-radius: 10px;
+    padding: 5px;
+    text-align: center;
+}

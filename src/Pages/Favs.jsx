@@ -12,13 +12,7 @@ const Favs = () => {
     }
   }, []);
 
-  const removeFavorites = (studentId) => {
-    const updatedFavorites = studentSelected.filter(
-      (student) => student.id !== studentId
-    );
-    setStudentSelected(updatedFavorites);
-    localStorage.setItem("favorites", JSON.stringify(updatedFavorites))
-  };
+
 
   return (
     <div className={f.container}>
@@ -31,7 +25,8 @@ const Favs = () => {
         return (
           
             <div className={f.card}>
-             <Card student={student}/>  
+             <Card student={student} setStudentSelect={setStudentSelected} isFavorite={true}/>
+               
             </div>
           
             

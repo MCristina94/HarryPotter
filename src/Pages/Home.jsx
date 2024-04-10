@@ -69,7 +69,7 @@ const Home = () => {
       <div className={h.cardContainer}>
         {currentItems.map((student, index) => (
           <div key={index}>
-            <Card student={student} setStudentSelect={setStudentSelect}/>
+            <Card student={student} setStudentSelect={setStudentSelect} />
           </div>
         ))}
       </div>
