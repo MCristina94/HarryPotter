@@ -5,6 +5,7 @@ import logoSlytherin from "../img/Slytherin.png";
 import logoHufflepuff from "../img/Hufflepuff.png";
 import logoRavenclaw from "../img/Ravenclaw.png";
 import logoHogwarts from "../img/houses.png";
+import { Link } from "react-router-dom";
 
 const Card = ({ student }) => {
   let imageStudent;
@@ -28,19 +29,20 @@ const Card = ({ student }) => {
 
   console.log(student.house);
   return (
+    <Link to={"/detail/" + student.id} className={c.links}>
     <div className={`${c.card} ${c[student.house.toLowerCase()]}`}>
       <img src={imageStudent} alt="photoCharacter" className={c.img} />
       <div className={c.info}>
         <h3>{student.name}</h3>
         <p>Casa: {student.house}</p>
       </div>
-      <div style={{ position: 'absolute', top: 20, right: 50 }}>
+      <div className={c.heart} style={{ position: 'absolute', top: 20, right: 50}}>
         <i class="fa-solid fa-heart" ></i>
       </div>
-      <div className="icon-container" style={{ position: 'absolute', top: 180, right: 50}}>
+      <div className={c.arrowCard}  style={{ position: 'absolute', top: 180, right: 50}}>
         <i class="fa-solid fa-up-right-from-square"></i>
       </div>
-    </div>
+    </div></Link>
   );
 };
 

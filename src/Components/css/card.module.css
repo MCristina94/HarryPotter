@@ -55,10 +55,24 @@
 .info p {
     margin-bottom: 0; 
 }
-.fa-up-right-from-square {
-  color: blue; 
+
+.arrowCard{
+  color: transparent
 }
 
-.arrow{
-  color: 'red'
+.card:hover .arrowCard{
+  color: #c4c0c0
+}
+
+.heart:hover{
+  cursor: pointer;
+  color:#c4c0c0
+}
+
+.heart:active{
+  transform: scale(0.95);
+}
+
+.links{
+  text-decoration: none;
 }

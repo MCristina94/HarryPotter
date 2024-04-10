@@ -1,0 +1,17 @@
+.bg{
+    background-color: #ffffff11;
+   padding: 5%;
+   margin: 0 20% 0 20%;
+   border-radius: 0 5% 5% 0;
+   border-left: 10px solid  #d8bf7f;
+   color: #b5b5b5;
+}
+
+.image{
+    border-radius: 5%;
+    height: 500px;
+}
+
+.tittle{
+    color: #d8bf7f;
+}
