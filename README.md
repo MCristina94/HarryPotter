@@ -1,4 +1,4 @@
-# Proyecto Pokemon
+# Harry Potter Fan Page
 
 _Este proyecto consiste en una página web donde se consume la API publica de Harry Potter https://hp-api.onrender.com/, donde se visualizan diferentes cards de los estudiantes de hogwarts, nombre, casa a la cual pertenece, contiene el detalle del estudiante, se puede añadir a favorito y eliminarlo de favorito, la pagina tambien cuenta con una ruta de Spells y un juego para saber cual es tu personaje asociado._
 
