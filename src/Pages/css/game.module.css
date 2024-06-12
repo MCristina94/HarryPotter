@@ -1,0 +1,10 @@
+.container{
+    padding-top: 5%;
+    height: 100vh;
+}
+.tittle{
+   display: flex;
+   color: #d8bf7f;
+   justify-content: center;
+   margin: 5%;
+}

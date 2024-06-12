@@ -28,9 +28,7 @@ const Favs = () => {
              <Card student={student} setStudentSelect={setStudentSelected} isFavorite={true}/>
                
             </div>
-          
-            
-          
+
         )
         
       })}
